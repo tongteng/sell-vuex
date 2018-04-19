@@ -1,0 +1,112 @@
+.wrapper{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.16rem 0.2rem;
+	.content{
+		width: 100%;
+		.productInfo{
+			width: 100%;
+			background-color: #fff;
+			border-radius: 0.12rem;
+			.stationInfo{
+				width: 100%;
+				padding: 0.34rem 0.33rem;
+				box-sizing: border-box;
+				background-color: #cca34c;
+				color: #fff;
+				font-size: 0.36rem;
+				border-top-left-radius: 0.12rem;
+				border-top-right-radius: 0.12rem;
+				.station{
+					width: 100%;
+					display: flex;
+					.stationName{
+						width: 0;
+						flex: 1 1 auto;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						padding-right: 0.2rem;
+					}
+					.payStatus{
+						flex: 0 0 auto;
+					}
+				}
+				.productList{
+					width: 100%;
+					font-size: 0.28rem;
+					margin-top: 0.36rem;
+					.product{
+						margin-top: 0.3rem;
+					}					
+				}
+			}
+			.locateInfo{
+				width: 100%;
+				padding: 0.33rem 0.34rem;
+				box-sizing: border-box;
+				font-size: 0.28rem;				
+				border-bottom-left-radius: 0.12rem;
+				border-bottom-right-radius: 0.12rem;
+				.location{
+					margin-top: 0.33rem;
+					font-weight: bolder;
+				}
+			}
+		}
+		.orderInfo{
+			margin-top: 0.2rem;
+			background-color: #fff;
+			// padding: 0.33rem 0.3rem;
+			font-size: 0.28rem;
+			border-radius: 0.12rem;
+			.useRemind{
+				padding: 0.33rem 0.3rem;				
+				background-color: #fff7e7;
+				color: #ca9f45;
+				border-top-left-radius: 0.12rem;
+				border-top-right-radius: 0.12rem;
+			}
+			.serialInfo{
+				padding: 0.33rem 0.3rem;				
+				border-bottom: 0.04rem solid #f2f4f7;
+				div{
+					margin-top: 0.2rem;
+					&:first-child{
+						margin-top: 0;
+					}
+				}
+			}
+			.payInfo{
+				padding: 0.33rem 0.3rem;
+				border-bottom-left-radius: 0.12rem;
+				border-bottom-right-radius: 0.12rem;				
+				div{
+					margin-top: 0.2rem;
+					&:first-child{
+						margin-top: 0;
+					}
+				}
+			}
+			.orderQt{
+				display: inline-block;
+				width: 4em;
+				white-space: nowrap;
+				&.w4{
+					letter-spacing: 0.5em;
+					&::after{
+						margin-left: -0.5em;
+					}
+				}
+				&::after{
+					content: "：";
+					display: inline-block;
+				}
+			}
+			.orderAs{
+				margin-left: 0.3rem;
+			}
+		}
+	}
+}
+

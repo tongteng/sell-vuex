@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+  }
+  .wrapper {
+	width: 100%;
+	background-color: #f2f4f7;
+	box-sizing: border-box;
+	padding: 0.2rem;
+	.content {
+	  width: 100%;
+	  height: 3.92rem;
+	  border-radius: 0.12rem;
+	  background-color: #fff;
+	  margin-top: 0.2rem;
+	  .title {
+		width: 100%;
+		height: 0.94rem;
+		display: flex;
+		display: -webkit-flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		font-size: 0.28rem;
+		font-weight: bolder;
+		border-bottom: 0.04rem solid #f2f4f7;
+		div.serialId {
+		  flex: 1 1 auto;
+		  padding-left: 0.26rem;
+		  width: 0;
+		  overflow: hidden;
+		  text-overflow: ellipsis;
+		  white-space: nowrap;
+		}
+		div.payStatus {
+		  flex: 0 0 auto;
+		  padding-right: 0.26rem;
+		  color: #d5ae5d;
+		  margin-left: 0.2rem;
+		  &.payUsed{
+			  color: #999;
+		  }
+		}
+	  }
+	}
+	.content:first-child {
+	  margin-top: 0;
+	}
+	.infowrapper{
+		padding: 0.3rem;
+		.infoContent{
+			display: flex;
+			display: -webkit-flex;
+			.imgContent{
+				flex: 0 0 auto;
+				width: 1.4rem;
+				height: 1.4rem;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.prodCont{
+				margin-left: 0.3rem;
+				flex: 1 1 auto;
+				width: 0;
+				height: 1.4rem;
+				overflow: hidden;
+				.foodInfo{
+					color: #999;
+					margin-top: 0.1rem;
+					font-size: 0.28rem;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					.foodCount{
+						flex: 1 1 auto;
+					}
+					.foodName{
+						padding-right: 2rem;
+						flex: 0 0 auto;
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+				}
+				.stationInfo{
+					font-size: 0.32rem;
+					font-weight: bolder;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+				.moreFoods{
+					font-size: 0.24rem;
+					color: #999;
+				}
+			}
+		}
+		.payContent{
+			height: 1.2rem;
+			display: flex;
+			display: -webkit-flex;
+			align-items: center;
+			flex-wrap: nowrap;
+			.price{
+				float: left;
+				font-weight: bold;	
+				font-size: 0.4rem;
+				flex-grow: 1;
+			}
+			.payBtn{
+				float: right;
+				font-size: 0.28rem;
+				width: 1.2rem;
+				height: 0.6rem;
+				line-height: 0.6rem;
+				text-align: center;
+				background-color: #d5ae5d;
+				border-radius: 0.1rem;
+				color: #fff;
+			}
+		}
+	}
+  }
+.moreOrder{
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 0.24rem;
+	color: #999;
+}
