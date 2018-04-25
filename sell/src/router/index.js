@@ -7,8 +7,6 @@ import demo from '@/components/demo/page.vue'
 
 Vue.use(Router)
 
-console.log('router');
-
 export default new Router({
   routes: [
     {
