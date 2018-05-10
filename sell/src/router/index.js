@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index/page.vue'
+import Index from '@/pages/Index/page.vue'
 import orderDetail from '@/components/orderDetail/page.vue'
 import orderList from '@/components/orderList/page.vue'
 import demo from '@/components/demo/page.vue'
