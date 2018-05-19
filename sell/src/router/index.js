@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/Index/page.vue'
+import About from '@/pages/about/page.vue'
 import orderDetail from '@/components/orderDetail/page.vue'
 import orderList from '@/components/orderList/page.vue'
 import demo from '@/components/demo/page.vue'
@@ -13,6 +14,11 @@ export default new Router({
 		path: '/',
 		name: '首页',
 		component: Index
+	},
+	{
+		path: '/About',
+		name: '个人信息',
+		component: About
 	},
 	{
 		path: '/orderDetail',
