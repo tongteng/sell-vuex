@@ -1,6 +1,5 @@
 .postlist-container{
     margin-bottom: 15px;
-
     .post-preview{
         a{
             color: #404040;
@@ -13,6 +12,11 @@
                 line-height: 1.3;
                 margin-top: 30px;
                 margin-bottom: 8px;
+                &::selection{
+                    text-shadow: none;
+                    background-color: #0085a1;
+                    color: #eee;
+                }
             }
             .post-subtitle{
                 font-size: 15px;
@@ -20,6 +24,11 @@
                 margin: 0;
                 font-weight: 300;
                 margin-bottom: 10px;
+                &::selection{
+                    text-shadow: none;
+                    background-color: #0085a1;
+                    color: #eee;
+                }
             }
             .post-content-preview{
                 font-size: 13px;
@@ -28,7 +37,13 @@
                 &:hover{
                     color: #0085a1;
                 }
+                &::selection{
+                    text-shadow: none;
+                    background-color: #0085a1;
+                    color: #eee;
+                }
             }
+
         }
         .post-meta{
             font-family: Lora,'Times New Roman',serif;
@@ -36,6 +51,45 @@
             font-size: 16px;
             font-style: italic;
             margin-top: 0;
+            &::selection{
+                text-shadow: none;
+                background-color: #0085a1;
+                color: #eee;
+            }
+        }
+    }
+    .pager{
+        margin: 20px 0 !important;
+        padding: 0 !important;
+        text-align: center;
+        list-style: none;
+        .btn{
+            display: inline;
+            a{
+                color: #404040;
+                font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+                line-height: 1.7;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                padding: 10px;
+                background-color: #fff;
+                border-radius: 0;
+                display: inline-block;
+                border: 1px solid #ddd;
+                text-decoration: none;
+                &:hover{
+                    background-color: #0085a1;
+                    color: #eee;
+                }
+            }
+            &.prev{
+                float: left;
+            }
+            &.next{
+                float: right;
+            }
         }
     }
 }
@@ -150,6 +204,10 @@
             .post-meta{
                 font-size: 18px;
             }
+        }
+        .pager .btn>a{
+            font-size: 14px;
+            padding: 15px 25px;
         }
     }
     .sidebar-container{

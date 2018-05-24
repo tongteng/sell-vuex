@@ -1,6 +1,9 @@
+import { tagLists } from '../../../config/data.js'
 export default{
 	data() {
-		return {}
+		return {
+			tagLists
+		}
 	},
 	methods: {
 		

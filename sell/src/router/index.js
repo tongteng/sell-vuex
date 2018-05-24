@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/Index/page.vue'
 import About from '@/pages/about/page.vue'
+import Content from '@/pages/content/page.vue'
+import Tags from '@/pages/tags/page.vue'
 import orderDetail from '@/components/orderDetail/page.vue'
 import orderList from '@/components/orderList/page.vue'
 import demo from '@/components/demo/page.vue'
@@ -19,6 +21,16 @@ export default new Router({
 		path: '/About',
 		name: '个人信息',
 		component: About
+	},
+	{
+		path: '/Content',
+		name: '博客',
+		component: Content
+	},
+	{
+		path: '/Tags',
+		name: 'tags',
+		component: Tags
 	},
 	{
 		path: '/orderDetail',

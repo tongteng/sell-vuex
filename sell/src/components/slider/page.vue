@@ -5,18 +5,14 @@
 	<div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
 		<section>
 			<hr class="hidden-sm hidden-xs">
-			<h5><a href="">FEATURED TAGS</a></h5>
+			<h5><a href="/#/tags">FEATURED TAGS</a></h5>
 			<div class="tags">
-				<a href="">记录生活</a>
-				<a href="">面试总结</a>
-				<a href="">HTML</a>
-				<a href="">CSS</a>
-				<a href="">Javascript</a>
+				<a :href="'/#/tags?tag=' + tag.tag" v-for="tag in tagLists">{{tag.tag}}</a>
 			</div>
 		</section>
 		<section class="visible-md visible-lg">
 			<hr>
-			<h5><a href="">ABOUT ME</a></h5>
+			<h5><a href="/#/about">ABOUT ME</a></h5>
 			<div class="short-about">
 				<img src="./img/avatar-tt.jpg" alt="">
 				<p>一蓑烟雨任平生</p>

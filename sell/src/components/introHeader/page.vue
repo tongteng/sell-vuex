@@ -8,8 +8,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="site-heading">
-                        <h1>TT Blog</h1>
-                        <span class="subheading">一蓑烟雨任平生</span>
+                        <h1>{{title.title}}</h1>
+                        <span class="subheading">{{title.subtitle}}</span>
                     </div>
                 </div>
             </div>
