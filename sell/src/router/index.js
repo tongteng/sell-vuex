@@ -7,6 +7,7 @@ import Tags from '@/pages/tags/page.vue'
 import orderDetail from '@/components/orderDetail/page.vue'
 import orderList from '@/components/orderList/page.vue'
 import demo from '@/components/demo/page.vue'
+import abouttest from '@/pages/abouttest/page.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
 		path: '/About',
 		name: '个人信息',
 		component: About
+	},
+	{
+		path: '/Abouttest',
+		name: 'about测试',
+		component: abouttest
 	},
 	{
 		path: '/Content',

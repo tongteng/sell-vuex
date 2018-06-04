@@ -18,7 +18,7 @@
 					<div class="navbar-collapse" style="height: auto;">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="/">Home</a></li>
-							<li><a href="/#/about">About</a></li>
+							<li><a href="/#/abouttest">About</a></li>
 							<li><a href="/#/tags">Tags</a></li>
 						</ul>	
 					</div>
