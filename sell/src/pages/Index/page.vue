@@ -10,14 +10,15 @@
 				<div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 postlist-container">
 					<div v-for="postitem in pagePost">
 						<div class="post-preview">
-							<a :href="'/#/content?ctitem='+postitem.url">
+							<a :href="'/#/content?ctitem='+postitem.url+'&id='+postitem.id">
 								<h2 class="post-title">{{postitem.title}}</h2>
 								<h3 class="post-subtitle">{{postitem.subtitle}}</h3>
 								<div class="post-content-preview">
 									{{postitem.content}}
 								</div>
 							</a>
-							<p class="post-meta">{{postitem.date}}</p>
+							<p class="post-meta">{{postitem.date}}<span class="iconDel" @click="delBlog(postitem.id)"><i class="iconfont">&#xe61d;</i></span></p>
+							
 						</div>
 						<hr>
 					</div>

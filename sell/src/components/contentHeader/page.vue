@@ -14,6 +14,7 @@
 						<h1>{{post.title}}</h1>
 						<h2 class="subheading" id="restname">{{post.subtitle}}</h2>
 						<span class="meta">{{post.date}}</span>
+                        <a :href="'/#/edit?type=edit&id='+post.id"><span class="fa-stack fa-lg"><i class="iconfont">&#xe600;</i></span></a>
 					</div>
                 </div>
             </div>

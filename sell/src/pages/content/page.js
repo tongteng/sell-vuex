@@ -72,7 +72,6 @@ export default{
         useHljs() {
             setTimeout(function() {
                 $('pre code').each(function(i, block) {
-                    console.log(block);
                     hljs.highlightBlock(block);
                 });
             },50)
@@ -85,7 +84,36 @@ export default{
                     return;
                 }
             })
-        }
+        },
+        getHeaderinfobyId(id){
+            this.postLists.forEach((item, index) => {
+                if(item.id == id){
+                    this.headerInfo = item;
+                    return;
+                }
+            })
+        },
+        selectSql(id) {
+			var db = openDatabase('blog', '1.0', 'blog content', 2 * 1024 * 1024);
+			db.transaction(function(tx) {
+				tx.executeSql('create table if not exists myblog (id unique,title,subtitle, date,tags,content)');
+			})
+			var _this = this;
+			var selectSqlText = 'select * from myblog where id = ?';
+			db.transaction(function(tx) {
+				tx.executeSql(selectSqlText, [id], function(tx, result) {
+                    var len = result.rows.length;
+                    console.log(result);
+                    _this.msg = result.rows[0].content;
+                    _this.useHljs();                                    
+					// if(len) {
+					// 	_this.value = result.rows[0].content;
+					// }else {
+					// 	_this.value = '';
+					// }
+				})
+			})
+		},
     },
     components: {
         VueMarkdown,
@@ -97,8 +125,11 @@ export default{
     mounted(){
         if(this.$route.query.ctitem){
             this.msg = this.contentLists[this.$route.query.ctitem];
+            this.getHeaderinfo(this.$route.query.ctitem);            
+        }else{
+            this.selectSql(+this.$route.query.id);
+            this.getHeaderinfobyId(+this.$route.query.id);
         }
-        this.getHeaderinfo(this.$route.query.ctitem);
-        this.useHljs();
+        this.useHljs();                
     }
 }

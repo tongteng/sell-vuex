@@ -8,7 +8,7 @@ import orderDetail from '@/components/orderDetail/page.vue'
 import orderList from '@/components/orderList/page.vue'
 import demo from '@/components/demo/page.vue'
 import abouttest from '@/pages/abouttest/page.vue'
-
+import edit from '@/pages/edit/page.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -32,6 +32,11 @@ export default new Router({
 		path: '/Content',
 		name: '博客',
 		component: Content
+	},
+	{
+		path: '/Edit',
+		name: '编辑',
+		component: edit
 	},
 	{
 		path: '/Tags',

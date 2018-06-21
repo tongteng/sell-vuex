@@ -16,7 +16,8 @@ export default {
 			title:{
 				title: "TT Blog",
 				subtitle: "一蓑烟雨任平生"
-			}
+			},
+			sqldb: ''
 		}
 	}, 
 	methods: {
@@ -53,7 +54,61 @@ export default {
 			}else {
 				window.pageYOffset = 0;
 			}
+		},
+		openSql() {
+			var db = openDatabase('blog', '1.0', 'blog content', 2 * 1024 * 1024);
+			this.sqldb = db;
+			db.transaction(function(tx) {
+				tx.executeSql('create table if not exists myblog (id unique,title,subtitle, date,tags,content)');
+			})
+			var _this = this;
+			var selectAllSqlText = 'select * from myblog';
+			db.transaction(function(tx) {
+				tx.executeSql(selectAllSqlText,[],function(tx, result) {
+					console.log(result);
+					_this.pushBlog(result.rows);
+				})
+			})
+		},
+		pushBlog(result) {
+			console.log(result);
+			for(let item of result){
+				item.author = 'HandSomeTT',
+				item.url = '',
+				item.content = item.content.slice(0, 200) + '...';
+				item.tags = item.tags.split(',');
+				this.postLists.unshift(item);
+			}
+			this.slicePostLists();			
+		},
+		delBlog(id){
+			var db = this.sqldb;
+			var _this = this;
+			var deleteSqlText = 'delete from myblog where id = ?';
+			db.transaction(function(tx) {
+				tx.executeSql(deleteSqlText, [id], function(tx, result){
+					console.log('删除成功')
+					window.location.reload()
+				})
+			})
 		}
+		// selectAllSql() {
+		// 	var db = this.sqldb;
+		// 	var _this = this;
+		// 	var selectAllSqlText = 'select * from myblog';
+		// 	db.transaction(function(tx) {
+		// 		tx.executeSql(selectAllSqlText, [], function(tx, result) {
+		// 			var len  = result.rows.length;
+		// 			// console.log(len);
+		// 			// if(len) {
+		// 			// 	_this.maxId = result.rows[len - 1].id + 1;
+		// 			// }else {
+		// 			// 	_this.maxId = 1;
+		// 			// }
+		// 			console.log(result);
+		// 		})
+		// 	})
+		// }
 	},
 	components: {
 		navheader,
@@ -61,7 +116,8 @@ export default {
 		indexfooter,
 		slider
 	},
-	mounted() {
-		this.slicePostLists();
+	created() {
+		this.openSql();
+		// this.selectAllsql();
 	}
 }
